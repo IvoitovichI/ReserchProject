@@ -1,0 +1,5 @@
+interface:
+  display_name: "Unity FP3D Research Agent"
+  short_description: "Разработка FP3D-игры и исследовательской телеметрии"
+  default_prompt: "Use $unity-fp3d-research-agent to implement or review a task in the Unity FP3D research game."
+  brand_color: "#173B57"

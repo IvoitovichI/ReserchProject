@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45c59a854c9e1147b35885c382f463e, type: 3}
+  m_Name: Definition_Elite
+  m_EditorClassIdentifier: DungeonTrace.Runtime::DungeonTrace.Rooms.RoomDefinition
+  roomId: room-elite-02
+  contentVersion: prototype-02
+  roomType: 5
+  difficultyTier: 0
+  weight: 1
+  tags: []
+  roomPrefab: {fileID: 5377496460167345477, guid: 1c0052ee322e75d46aaed2d53f1f4a5d, type: 3}
+  doorSockets:
+  - stableId: door-north
+    direction: 0
+  - stableId: door-east
+    direction: 1
+  - stableId: door-south
+    direction: 2
+  - stableId: door-west
+    direction: 3
+  encounterVariants: []
+  telemetryZones: []
+  expectedCompletionSeconds: {x: 30, y: 90}
+  width: 14
+  depth: 14
+  wallHeight: 4
+  playerSpawn: {x: 0, y: 1.05, z: -6}
+  exits: []

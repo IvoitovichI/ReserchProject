@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24af8062ea8c6594196de9ef3faf0227, type: 3}
+  m_Name: DungeonGenerationConfig
+  m_EditorClassIdentifier: DungeonTrace.Runtime::DungeonTrace.Generation.DungeonGenerationConfig
+  roomCount: 9
+  minimumMainPathLength: 8
+  maximumMainPathLength: 9
+  difficultyBudget: 16
+  minimumDifficultyBudget: 8
+  maximumBranches: 1
+  optionalEliteChance: 35
+  secretRoomChance: 25
+  rewardMayBeShop: 1
+  allowedRoomTypes: 0000000001000000020000000300000004000000050000000600000007000000

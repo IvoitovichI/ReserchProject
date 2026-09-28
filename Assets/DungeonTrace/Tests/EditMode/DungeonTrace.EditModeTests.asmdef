@@ -1,0 +1,6 @@
+{
+  "name": "DungeonTrace.EditModeTests",
+  "references": ["DungeonTrace.Runtime"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

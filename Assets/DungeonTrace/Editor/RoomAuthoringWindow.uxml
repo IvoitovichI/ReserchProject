@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:Style src="RoomAuthoringWindow.uss" />
+  <ui:VisualElement name="root" class="room-authoring-window">
+    <ui:Label text="Dungeon Trace Room Authoring" class="title" />
+    <ui:HelpBox text="Select a RoomRoot in the Hierarchy or Project, then scan and validate it." class="help" />
+    <ui:VisualElement class="button-row">
+      <ui:Button name="createTemplateButton" text="Create Placeholder Template" class="action-button" />
+      <ui:Button name="scanButton" text="Scan Components" class="action-button" />
+      <ui:Button name="validateButton" text="Validate Selected Room" class="action-button" />
+    </ui:VisualElement>
+    <ui:Label name="summaryLabel" class="summary" />
+    <ui:ScrollView name="resultsScroll" class="results" />
+  </ui:VisualElement>
+</ui:UXML>

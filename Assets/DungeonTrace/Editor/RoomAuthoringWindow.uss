@@ -1,0 +1,51 @@
+:root {
+  --spacing: 8px;
+  --error: #e57373;
+  --warning: #ffcc80;
+}
+
+.room-authoring-window {
+  padding: var(--spacing);
+}
+
+.title {
+  unity-font-style: bold;
+  font-size: 14px;
+  margin-bottom: var(--spacing);
+}
+
+.help {
+  margin-bottom: var(--spacing);
+}
+
+.button-row {
+  flex-direction: row;
+  margin-bottom: var(--spacing);
+}
+
+.action-button {
+  margin-right: var(--spacing);
+}
+
+.summary {
+  white-space: normal;
+  margin-bottom: var(--spacing);
+}
+
+.results {
+  flex-grow: 1;
+}
+
+.issue-button {
+  white-space: normal;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.error-issue {
+  color: var(--error);
+}
+
+.warning-issue {
+  color: var(--warning);
+}

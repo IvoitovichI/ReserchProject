@@ -1,0 +1,5 @@
+{
+  "name": "DungeonTrace.PlayModeTests",
+  "references": ["DungeonTrace.Runtime"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}
