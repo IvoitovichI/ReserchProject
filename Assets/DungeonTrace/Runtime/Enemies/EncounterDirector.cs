@@ -7,7 +7,15 @@ namespace DungeonTrace.Enemies
     {
         private readonly List<EnemyController> enemies = new();
         private bool cleared;
-        public void Configure(IEnumerable<EnemyController> spawned) { enemies.Clear(); enemies.AddRange(spawned); Debug.Log($"[Encounter] started enemies={enemies.Count}", this); }
+        public bool IsCleared => cleared;
+        public int ActiveEnemyCount => enemies.Count;
+        public void Configure(IEnumerable<EnemyController> spawned)
+        {
+            enemies.Clear();
+            if (spawned != null) foreach (var enemy in spawned) if (enemy != null && !enemies.Contains(enemy)) enemies.Add(enemy);
+            cleared = enemies.Count == 0;
+            Debug.Log($"[Encounter] started enemies={enemies.Count}", this);
+        }
         private void Update()
         {
             if (cleared || enemies.Count == 0) return;

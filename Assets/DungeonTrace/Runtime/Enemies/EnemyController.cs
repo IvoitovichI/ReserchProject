@@ -23,9 +23,10 @@ namespace DungeonTrace.Enemies
         private float chargeEndsAt;
         public EnemyState State => state;
 
-        public void Configure(EnemyDefinition value, Transform targetTransform)
+        public void Configure(EnemyDefinition value, Transform targetTransform, float graceSeconds = 1f)
         {
-            definition = value; target = targetTransform;
+            definition = value; target = targetTransform; navMeshAgent = GetComponent<NavMeshAgent>();
+            if (state == EnemyState.SpawnGrace) stateEndsAt = Time.time + Mathf.Max(0f, graceSeconds);
         }
 
         private void Awake()
@@ -95,12 +96,13 @@ namespace DungeonTrace.Enemies
         {
             var direction = point - transform.position; direction.y = 0f;
             if (direction.sqrMagnitude < .01f) return;
-            if (navMeshAgent != null && navMeshAgent.isOnNavMesh)
+            var agent = GetComponent<NavMeshAgent>();
+            if (agent != null && agent.isOnNavMesh)
             {
-                navMeshAgent.isStopped = false;
-                if (navMeshAgent.SetDestination(point) && navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid) return;
-                navMeshAgent.ResetPath();
-                navMeshAgent.isStopped = true;
+                agent.isStopped = false;
+                if (agent.SetDestination(point) && agent.pathStatus != NavMeshPathStatus.PathInvalid) return;
+                agent.ResetPath();
+                agent.isStopped = true;
                 Debug.LogWarning($"[Enemy] {definition.EnemyId} NavMesh path failed; using visible recovery movement", this);
                 ChangeState(EnemyState.Recovery, .35f);
             }

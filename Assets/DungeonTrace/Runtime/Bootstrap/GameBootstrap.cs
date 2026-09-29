@@ -36,6 +36,14 @@ namespace DungeonTrace.Bootstrap
                 Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
                 return;
             }
+            if (SceneManager.GetActiveScene().name == "TenRoomDungeonZone")
+            {
+                flow.StartSession(new SessionConfig(ResearchMode.Standard, 12345, "prototype-03"));
+                CreatePlayer(new Vector3(0f, 0f, -4f));
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                return;
+            }
             flow.StartSession(new SessionConfig(ResearchMode.Standard, 12345, "prototype-01"));
             var room = CreateTestRoom();
             CreatePlayer(room.Definition.PlayerSpawn);
@@ -65,7 +73,7 @@ namespace DungeonTrace.Bootstrap
             var weapon = player.AddComponent<WeaponController>(); weapon.Configure(aim, input, WeaponDefinition.CreatePrototypePulsePistol(), state);
             var combatSandbox = player.AddComponent<CombatSandboxSpawner>();
             combatSandbox.Configure(cameraObject.transform, weapon);
-            combatSandbox.SpawnEnemyEncounter(player.transform);
+            if (SceneManager.GetActiveScene().name != "TenRoomDungeonZone") combatSandbox.SpawnEnemyEncounter(player.transform);
             motor.Configure(controller, input, state);
             return health;
         }
