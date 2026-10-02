@@ -1,0 +1,6 @@
+{
+  "name": "DungeonTrace.Editor",
+  "references": ["DungeonTrace.Runtime"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

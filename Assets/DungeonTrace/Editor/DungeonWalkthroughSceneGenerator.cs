@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -66,13 +65,9 @@ namespace DungeonTrace.Editor
             var lighting = new GameObject("Directional Light");
             var light = lighting.AddComponent<Light>();
             light.type = LightType.Directional; light.intensity = .8f; light.transform.rotation = Quaternion.Euler(50f, -35f, 0f);
-            var zone = new GameObject("TenRoomDungeonZone");
-            var surface = zone.AddComponent<NavMeshSurface>();
-            surface.collectObjects = CollectObjects.All;
-            surface.useGeometry = NavMeshCollectGeometry.PhysicsColliders;
-            surface.BuildNavMesh();
+            new GameObject("TenRoomDungeonZone");
             EditorSceneManager.SaveScene(scene, "Assets/Scenes/TenRoomDungeonZone.unity");
-            Debug.Log("Created TenRoomDungeonZone: 10 connected rooms, from Start Threshold to Boss Sanctum. Enter Play mode to traverse the full route.");
+            Debug.Log("Created TenRoomDungeonZone: 10 connected rooms, from Start Threshold to Boss Sanctum. NavMesh baking is not included because the AI Navigation package is not installed; enemies use their visible fallback movement. Enter Play mode to traverse the full route.");
         }
 
         private static void CreateRoomLight(Transform room, int index)
